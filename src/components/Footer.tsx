@@ -38,9 +38,7 @@ export default function Footer() {
                 <div className={s.bottom}>
                     &copy; {new Date().getFullYear()} {businessData.name}. All
                     rights reserved. | ABN 12 345 678 901
-                    <p className={s.attribution}>
-                        Website by JBM Web Co
-                    </p>
+                    <p className={s.attribution}>Website by JBM Web Co</p>
                 </div>
             </div>
         </footer>

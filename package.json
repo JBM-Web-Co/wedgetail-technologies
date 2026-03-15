@@ -6,9 +6,7 @@
     "scripts": {
         "dev": "react-router dev --port 5173",
         "build": "tsc && react-router build",
-        "build:preview": "vite build --config vite.config.preview.ts",
         "fullBuild": "npm install && npm run build",
-        "preview": "vite preview",
         "lint": "eslint .",
         "typecheck": "tsc --noEmit",
         "style": "npx prettier --write '**/*.{js,ts,tsx,json}'"
