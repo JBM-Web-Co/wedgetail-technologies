@@ -1,0 +1,93 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.contact {
+    @include section-padding;
+    background: $surface;
+
+    .inner {
+        @include container;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        & > * {
+            width: 100%;
+        }
+
+        @include bp.above(tablet) {
+            & > * {
+                width: calc(50% - 1.5rem);
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .infoTitle {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text;
+        margin-bottom: 0.5rem;
+    }
+
+    .infoText {
+        font-size: 0.95rem;
+        color: $text-muted;
+        line-height: 1.7;
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .itemIcon {
+        width: 40px;
+        height: 40px;
+        border-radius: $radius;
+        background: $primary-light;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .itemLabel {
+        font-size: 0.8rem;
+        color: $text-muted;
+    }
+
+    .itemValue {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: $text;
+    }
+
+    .form {
+        background: $bg;
+        border: 1px solid $border;
+        border-radius: $radius-lg;
+        padding: 2rem;
+    }
+}
+
+.formSuccess {
+    background: $primary-light;
+    color: $primary;
+    padding: 1rem;
+    border-radius: $radius;
+    text-align: center;
+    font-weight: 600;
+}

@@ -1,0 +1,52 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.ctaBand {
+    @include section-padding;
+    background: $primary;
+    color: $primary-fg;
+    text-align: center;
+
+    .inner {
+        @include container;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+
+        @include bp.above(tablet) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .text {
+        font-size: 1.05rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: $bg;
+        color: $primary;
+        padding: 0.85rem 2rem;
+        border-radius: $radius;
+        font-weight: 700;
+        font-size: 1.05rem;
+        transition:
+            transform 0.15s,
+            box-shadow 0.2s;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

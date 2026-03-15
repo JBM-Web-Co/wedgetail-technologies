@@ -1,0 +1,173 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: $nav-bg;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid $border;
+    height: $header-height;
+    transition:
+        background 0.3s,
+        border-color 0.3s;
+
+    .inner {
+        @include container;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.logo {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .icon {
+        color: $primary;
+    }
+}
+
+.nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+
+    @include bp.above(tablet) {
+        display: flex;
+    }
+
+    .link {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $text-muted;
+        transition: color 0.2s;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+
+    .cta {
+        background: $primary;
+        color: $primary-fg;
+        padding: 0.6rem 1.4rem;
+        border-radius: $radius;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition:
+            background 0.2s,
+            transform 0.15s;
+
+        &:hover {
+            background: $primary-hover;
+            transform: translateY(-1px);
+        }
+    }
+}
+
+.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: $text-muted;
+    transition:
+        background 0.2s,
+        color 0.2s;
+
+    &:hover {
+        background: var(--surface);
+        color: $text;
+    }
+
+    @include bp.below(tablet) {
+        display: none;
+    }
+}
+
+.themeToggleMobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: $text-muted;
+    transition:
+        background 0.2s,
+        color 0.2s;
+
+    &:hover {
+        background: var(--surface);
+        color: $text;
+    }
+
+    @include bp.below(tablet) {
+        display: flex;
+    }
+}
+
+.rightGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mobileMenuBtn {
+    display: flex;
+    color: $text;
+    padding: 0.5rem;
+
+    @include bp.above(tablet) {
+        display: none;
+    }
+}
+
+.mobileMenu {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    background: $bg;
+    border-bottom: 1px solid $border;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 99;
+
+    @include bp.above(tablet) {
+        display: none;
+    }
+}
+
+.mobileNavLink {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $text;
+    padding: 0.5rem 0;
+}
+
+.mobileNavCta {
+    background: $primary;
+    color: $primary-fg;
+    padding: 0.75rem;
+    border-radius: $radius;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.25rem;
+}

@@ -1,0 +1,64 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.faq {
+    @include section-padding;
+    background: $bg;
+
+    .inner {
+        @include container;
+    }
+
+    .list {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .item {
+        border: 1px solid $border;
+        border-radius: $radius-lg;
+        overflow: hidden;
+        transition: border-color 0.2s;
+    }
+
+    .itemOpen {
+        border-color: $primary;
+    }
+
+    .question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.15rem 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: $text;
+        text-align: left;
+        transition: background 0.2s;
+
+        &:hover {
+            background: $surface;
+        }
+    }
+
+    .icon {
+        color: $text-muted;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+    }
+
+    .iconOpen {
+        transform: rotate(180deg);
+    }
+
+    .answer {
+        padding: 0 1.5rem 1.25rem;
+        font-size: 0.95rem;
+        color: $text-muted;
+        line-height: 1.7;
+    }
+}

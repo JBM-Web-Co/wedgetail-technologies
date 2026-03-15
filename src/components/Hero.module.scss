@@ -1,0 +1,130 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.hero {
+    padding-top: calc($header-height + 3rem);
+    padding-bottom: 4rem;
+
+    @include bp.above(tablet) {
+        padding-top: calc($header-height + 5rem);
+        padding-bottom: 6rem;
+    }
+
+    .inner {
+        @include container;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        align-items: center;
+
+        @include bp.above(tablet) {
+            gap: 4rem;
+        }
+    }
+
+    .content {
+        max-width: 560px;
+        width: 100%;
+
+        @include bp.above(tablet) {
+            width: calc(50% - 2rem);
+            flex: 0 0 auto;
+        }
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: $primary-light;
+        color: $primary;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+    }
+
+    .headline {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: $text;
+        margin-bottom: 1rem;
+
+        @include bp.above(tablet) {
+            font-size: 3.5rem;
+        }
+
+        @include bp.above(laptop) {
+            font-size: 4rem;
+        }
+    }
+
+    .highlight {
+        color: $primary;
+    }
+
+    .subheadline {
+        font-size: 1.1rem;
+        color: $text-muted;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+
+        @include bp.above(tablet) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .risk {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        color: $text-muted;
+        margin-bottom: 1.5rem;
+    }
+
+    .stats {
+        display: flex;
+        gap: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid $border;
+    }
+
+    .stat {
+        text-align: left;
+    }
+
+    .statValue {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text;
+    }
+
+    .statLabel {
+        font-size: 0.8rem;
+        color: $text-muted;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @include bp.above(tablet) {
+            flex: 1 1 0;
+            min-width: 0;
+            width: auto;
+        }
+    }
+}

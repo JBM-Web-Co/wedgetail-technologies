@@ -1,0 +1,90 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 3rem 0 1.5rem;
+    transition: background 0.3s;
+
+    .inner {
+        @include container;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        & > *:first-child {
+            width: 100%;
+        }
+
+        @include bp.above(tablet) {
+            & > *:first-child {
+                flex: 2 1 0;
+                min-width: 0;
+            }
+
+            & > *:not(:first-child) {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+        }
+    }
+
+    .brand {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--footer-heading);
+        margin-bottom: 0.75rem;
+    }
+
+    .desc {
+        font-size: 0.88rem;
+        color: var(--footer-muted);
+        line-height: 1.7;
+        max-width: 320px;
+    }
+
+    .colTitle {
+        font-family: $font-heading;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--footer-heading);
+        margin-bottom: 0.75rem;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .link {
+        font-size: 0.88rem;
+        color: var(--footer-muted);
+        transition: color 0.2s;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .bottom {
+        border-top: 1px solid var(--footer-border);
+        padding-top: 1.5rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--footer-muted);
+    }
+
+    .attribution {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--footer-muted);
+        opacity: 0.6;
+    }
+}

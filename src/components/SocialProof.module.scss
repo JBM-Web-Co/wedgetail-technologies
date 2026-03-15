@@ -1,0 +1,89 @@
+﻿@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.socialProof {
+    @include section-padding;
+    background: $surface;
+
+    .inner {
+        @include container;
+    }
+}
+
+.ratingBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.ratingStars {
+    display: flex;
+    gap: 0.25rem;
+    color: $accent;
+}
+
+.ratingText {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text;
+}
+
+.ratingSubtext {
+    font-size: 0.85rem;
+    color: $text-muted;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.testimonialCard {
+    background: $bg;
+    border: 1px solid $border;
+    border-radius: $radius-lg;
+    padding: 1.75rem;
+    width: 100%;
+
+    @include bp.above(tablet) {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+    }
+}
+
+.testimonialStars {
+    display: flex;
+    gap: 0.15rem;
+    color: $accent;
+    margin-bottom: 1rem;
+}
+
+.testimonialText {
+    font-size: 0.95rem;
+    color: $text;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+}
+
+.testimonialAuthor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.testimonialName {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: $text;
+}
+
+.testimonialLocation {
+    font-size: 0.8rem;
+    color: $text-muted;
+}
