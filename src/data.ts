@@ -21,9 +21,9 @@ export const businessData: BusinessData = {
     postcode: '',
     hours: 'Mon–Fri: 7:00am – 5:00pm',
     navItems: [
+        { label: 'About', href: '#about' },
         { label: 'Services', href: '#services' },
         { label: 'Industries', href: '#industries' },
-        { label: 'About', href: '#about' },
         { label: 'Contact', href: '#contact' },
     ],
     benefits: [
