@@ -26,7 +26,7 @@ const JSON_LD = {
         addressCountry: 'AU',
     },
     openingHours: businessData.hours,
-    areaServed: 'Australia',
+    areaServed: '',
 };
 
 export const meta: MetaFunction = () => [

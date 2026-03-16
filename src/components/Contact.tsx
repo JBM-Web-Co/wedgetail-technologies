@@ -125,7 +125,7 @@ export default function Contact() {
                                     Service Area
                                 </div>
                                 <div className={s.itemValue}>
-                                    All areas across Australia
+                                    Contact us to discuss your area
                                 </div>
                             </div>
                         </div>

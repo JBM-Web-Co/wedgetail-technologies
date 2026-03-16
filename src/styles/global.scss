@@ -1,7 +1,8 @@
 @use 'variables' as *;
 
-// ── Wedgetail Technologies — Always Dark Theme ───────────────────────────────
-:root {
+// ── Wedgetail Technologies — Dark Theme (default) ────────────────────────────
+:root,
+[data-theme='dark'] {
     --bg: #060d1a;
     --surface: #0b1929;
     --surface-2: #112238;
@@ -16,6 +17,28 @@
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
     --footer-bg: #030a14;
+    --footer-text: #7a8fa8;
+    --footer-heading: #eef2ff;
+    --footer-muted: #4a6280;
+    --footer-border: rgba(43, 127, 212, 0.12);
+}
+
+// ── Light Theme ───────────────────────────────────────────────────────────────
+[data-theme='light'] {
+    --bg: #f2f6fb;
+    --surface: #ffffff;
+    --surface-2: #e4ecf7;
+    --text: #0a1929;
+    --text-muted: #3a5570;
+    --text-light: #5a7a9a;
+    --border: rgba(43, 127, 212, 0.18);
+    --border-light: rgba(43, 127, 212, 0.09);
+    --primary-light: rgba(43, 127, 212, 0.08);
+    --nav-bg: rgba(242, 246, 251, 0.92);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --footer-bg: #0a1929;
     --footer-text: #7a8fa8;
     --footer-heading: #eef2ff;
     --footer-muted: #4a6280;

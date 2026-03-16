@@ -1,4 +1,4 @@
-import { Bird, Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 import { businessData } from '../data';
 import s from './Footer.module.scss';
 
@@ -9,14 +9,13 @@ export default function Footer() {
                 <div className={s.grid}>
                     <div>
                         <div className={s.brand}>
-                            <Bird size={22} className={s.brandIcon} />
                             {businessData.name}
                         </div>
                         <p className={s.tagline}>{businessData.tagline}</p>
                         <p className={s.desc}>
                             Advanced aerial data solutions using cutting-edge
                             drone technology and sensor payloads — delivering
-                            actionable insights across Australia.
+                            actionable insights for every project.
                         </p>
                     </div>
                     <div>

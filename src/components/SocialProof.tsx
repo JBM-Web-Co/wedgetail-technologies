@@ -4,7 +4,7 @@ import { useScrollReveal } from '../hooks';
 import s from './SocialProof.module.scss';
 
 const POINTS = [
-    "Providing aerial data for Australia's most demanding environments",
+    'Providing aerial data for the most demanding environments',
     'Orthomosaic mapping for precision land analysis and planning',
     'Photographic & thermographic asset inspections from the air',
     'LiDAR/point cloud data for engineering and survey applications',
@@ -75,7 +75,7 @@ export default function SocialProof() {
                         <div className={s.imageBadge}>
                             <span className={s.badgeValue}>100%</span>
                             <span className={s.badgeLabel}>
-                                Australia-wide coverage
+                                Data accuracy
                             </span>
                         </div>
                     </motion.div>

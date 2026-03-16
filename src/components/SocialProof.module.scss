@@ -108,9 +108,9 @@
         position: absolute;
         bottom: 1.5rem;
         left: 1.5rem;
-        background: rgba(6, 13, 26, 0.85);
+        background: $surface;
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(43, 127, 212, 0.25);
+        border: 1px solid $border;
         border-radius: $radius-lg;
         padding: 0.75rem 1.25rem;
         display: flex;
@@ -128,7 +128,7 @@
 
     .badgeLabel {
         font-size: 0.78rem;
-        color: #7a8fa8;
+        color: $text-muted;
         font-weight: 500;
     }
 }

@@ -46,7 +46,7 @@ export default function Services() {
                     ))}
                 </div>
                 <p className={s.coverage}>
-                    Covering all areas across Australia
+                    Get in touch to discuss your project requirements
                 </p>
             </div>
         </section>

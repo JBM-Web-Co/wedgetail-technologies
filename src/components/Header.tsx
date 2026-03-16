@@ -1,18 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Bird, Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Sun, Moon } from 'lucide-react';
 import { businessData } from '../data';
+import { useTheme } from '../context/ThemeContext';
 import s from './Header.module.scss';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const reducedMotion = useReducedMotion();
+    const { theme, toggle } = useTheme();
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
-        <header className={s.header}>
+        <header className={`${s.header}${scrolled ? ` ${s.scrolled}` : ''}`}>
             <div className={s.inner}>
                 <a href="#" className={s.logo}>
-                    <Bird size={26} className={s.icon} />
                     {businessData.name}
                 </a>
 
@@ -22,6 +30,17 @@ export default function Header() {
                             {item.label}
                         </a>
                     ))}
+                    <button
+                        className={s.themeBtn}
+                        onClick={toggle}
+                        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                    >
+                        {theme === 'dark' ? (
+                            <Sun size={18} />
+                        ) : (
+                            <Moon size={18} />
+                        )}
+                    </button>
                     <a
                         href={`tel:${businessData.phone.replace(/\s/g, '')}`}
                         className={s.cta}
@@ -31,14 +50,27 @@ export default function Header() {
                     </a>
                 </nav>
 
-                <button
-                    className={s.mobileMenuBtn}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                    aria-expanded={menuOpen}
-                >
-                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                <div className={s.mobileRight}>
+                    <button
+                        className={s.themeBtn}
+                        onClick={toggle}
+                        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                    >
+                        {theme === 'dark' ? (
+                            <Sun size={18} />
+                        ) : (
+                            <Moon size={18} />
+                        )}
+                    </button>
+                    <button
+                        className={s.mobileMenuBtn}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={menuOpen}
+                    >
+                        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
             <AnimatePresence>

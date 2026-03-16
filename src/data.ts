@@ -34,9 +34,9 @@ export const businessData: BusinessData = {
             iconName: 'crosshair',
         },
         {
-            title: 'Nationwide Coverage',
+            title: 'Remote Capability',
             description:
-                'We cover all areas across Australia — from remote rural stations to major development sites.',
+                'Capable of operating in challenging environments — from remote rural stations to major development sites.',
             iconName: 'globe',
         },
         {
@@ -95,5 +95,5 @@ export const businessData: BusinessData = {
     faqs: [],
     rating: 5.0,
     reviewCount: 0,
-    areas: ['All areas across Australia'],
+    areas: [],
 };

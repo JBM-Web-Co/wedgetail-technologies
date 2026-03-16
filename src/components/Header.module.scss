@@ -7,10 +7,52 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background: $nav-bg;
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(43, 127, 212, 0.1);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
     height: $header-height;
+    transition:
+        background 0.35s ease,
+        backdrop-filter 0.35s ease,
+        border-color 0.35s ease;
+
+    &.scrolled {
+        background: $nav-bg;
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(43, 127, 212, 0.1);
+    }
+
+    &:not(.scrolled) {
+        .logo {
+            color: #ffffff;
+
+            .icon {
+                color: #ffffff;
+            }
+        }
+
+        .link {
+            color: rgba(255, 255, 255, 0.8);
+
+            &:hover,
+            &:focus {
+                color: #ffffff;
+            }
+        }
+
+        .themeBtn {
+            color: rgba(255, 255, 255, 0.8);
+
+            &:hover {
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .mobileMenuBtn {
+            color: #ffffff;
+        }
+    }
 
     .inner {
         @include container;
@@ -25,7 +67,7 @@
     font-family: $font-heading;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #eef2ff;
+    color: $text;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -48,12 +90,12 @@
     .link {
         font-size: 0.88rem;
         font-weight: 500;
-        color: #7a8fa8;
+        color: $text-muted;
         transition: color 0.2s;
 
         &:hover,
         &:focus {
-            color: #eef2ff;
+            color: $text;
         }
     }
 
@@ -84,14 +126,37 @@
     }
 }
 
-.mobileMenuBtn {
+.themeBtn {
     display: flex;
-    color: #eef2ff;
-    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    color: $text-muted;
+    padding: 0.4rem;
+    border-radius: $radius;
+    transition:
+        color 0.2s,
+        background 0.2s;
+
+    &:hover {
+        color: $text;
+        background: $primary-light;
+    }
+}
+
+.mobileRight {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 
     @include bp.above(tablet) {
         display: none;
     }
+}
+
+.mobileMenuBtn {
+    display: flex;
+    color: $text;
+    padding: 0.5rem;
 }
 
 .mobileMenu {
@@ -99,8 +164,8 @@
     top: $header-height;
     left: 0;
     right: 0;
-    background: #0b1929;
-    border-bottom: 1px solid rgba(43, 127, 212, 0.14);
+    background: $surface;
+    border-bottom: 1px solid $border;
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -115,9 +180,9 @@
 .mobileNavLink {
     font-size: 1rem;
     font-weight: 500;
-    color: #7a8fa8;
+    color: $text-muted;
     padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(43, 127, 212, 0.08);
+    border-bottom: 1px solid $border-light;
 
     &:last-of-type {
         border-bottom: none;
