@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Phone, ChevronDown } from 'lucide-react';
 import { businessData } from '../data';
 import s from './Hero.module.scss';
+import logoBg from '../static/logo.png';
 
 export default function Hero() {
     const reducedMotion = useReducedMotion();
@@ -17,10 +18,9 @@ export default function Hero() {
     return (
         <section className={s.hero} aria-label="Hero">
             <div className={s.bg} aria-hidden="true">
-                {/* [PLACEHOLDER] Replace with actual high-resolution aerial photography */}
                 <img
-                    src="https://images.unsplash.com/photo-1473218861634-bdd29fe4c22d?auto=format&fit=crop&w=1920&q=80"
-                    alt=""
+                    src={logoBg}
+                    alt="Wedge tailed eagle silhouette"
                     className={s.bgImg}
                     fetchPriority="high"
                 />
@@ -28,10 +28,6 @@ export default function Hero() {
             </div>
 
             <div className={s.inner}>
-                <motion.div className={s.eyebrow} {...anim(0)}>
-                    Advanced UAV Aerial Data Solutions
-                </motion.div>
-
                 <motion.h1 className={s.headline} {...anim(0.12)}>
                     A Higher Perspective
                     <br />

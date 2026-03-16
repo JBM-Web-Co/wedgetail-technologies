@@ -2,10 +2,9 @@
 
 import type { MetaFunction } from 'react-router';
 import Hero from '../components/Hero';
+import SocialProof from '../components/SocialProof';
 import Services from '../components/Services';
 import Industries from '../components/Industries';
-import Benefits from '../components/Benefits';
-import SocialProof from '../components/SocialProof';
 import CTABand from '../components/CTABand';
 import Contact from '../components/Contact';
 import { businessData } from '../data';
@@ -55,10 +54,9 @@ export default function HomePage() {
     return (
         <>
             <Hero />
+            <SocialProof />
             <Services />
             <Industries />
-            <Benefits />
-            <SocialProof />
             <CTABand />
             <Contact />
         </>
