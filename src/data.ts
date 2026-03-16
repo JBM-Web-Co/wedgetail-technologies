@@ -77,12 +77,6 @@ export const businessData: BusinessData = {
                 'Precision weed detection from the air combined with the creation of application spot spray files for targeted treatment.',
             iconName: 'sprout',
         },
-        {
-            title: 'Aerial Photography',
-            description:
-                'Professional cinematic aerial imagery for marketing, documentation, and progress reporting across any industry.',
-            iconName: 'camera',
-        },
     ],
     industries: [
         { label: 'Agriculture', iconName: 'wheat' },

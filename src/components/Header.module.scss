@@ -81,7 +81,7 @@
 .nav {
     display: none;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
 
     @include bp.above(tablet) {
         display: flex;
