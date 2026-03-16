@@ -1,20 +1,60 @@
-﻿@use '../styles/variables' as *;
+@use '../styles/variables' as *;
 @use '../styles/breakpoints' as bp;
 
 .ctaBand {
     @include section-padding;
-    background: $primary;
-    color: $primary-fg;
+    background: linear-gradient(
+        135deg,
+        #0a1830 0%,
+        #0d2147 50%,
+        #0a1830 100%
+    );
+    border-top: 1px solid rgba(43, 127, 212, 0.18);
+    border-bottom: 1px solid rgba(43, 127, 212, 0.18);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+            ellipse at center,
+            rgba(43, 127, 212, 0.08) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+    }
 
     .inner {
         @include container;
+        position: relative;
+        z-index: 1;
+    }
+
+    .eyebrow {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $primary;
+        margin-bottom: 1rem;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
         font-weight: 700;
-        margin-bottom: 0.75rem;
+        color: #eef2ff;
+        margin-bottom: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: -0.015em;
 
         @include bp.above(tablet) {
             font-size: 2.5rem;
@@ -23,9 +63,10 @@
 
     .text {
         font-size: 1.05rem;
-        opacity: 0.9;
-        margin-bottom: 2rem;
-        max-width: 500px;
+        color: #7a8fa8;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+        max-width: 520px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -33,20 +74,49 @@
     .btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: $bg;
-        color: $primary;
-        padding: 0.85rem 2rem;
-        border-radius: $radius;
+        gap: 0.65rem;
+        background: $primary;
+        color: #ffffff;
+        padding: 1rem 2.5rem;
+        border-radius: $radius-lg;
+        font-family: $font-heading;
         font-weight: 700;
         font-size: 1.05rem;
         transition:
+            background 0.2s,
             transform 0.15s,
             box-shadow 0.2s;
+        box-shadow: 0 0 32px rgba(43, 127, 212, 0.3);
 
         &:hover {
+            background: $primary-hover;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 36px rgba(43, 127, 212, 0.5);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            &:hover {
+                transform: none;
+            }
         }
     }
+}
+
+.fadeUp {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+.fadeUpVisible {
+    opacity: 1;
+    transform: translateY(0);
 }

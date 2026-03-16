@@ -1,0 +1,83 @@
+@use '../styles/variables' as *;
+@use '../styles/breakpoints' as bp;
+
+.industries {
+    background: $surface;
+    padding: 4rem 0;
+
+    .inner {
+        @include container;
+    }
+
+    .label {
+        text-align: center;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $text-light;
+        margin-bottom: 2.5rem;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        @include bp.above(tablet) {
+            gap: 0;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.5rem 2rem;
+        border-radius: $radius-lg;
+        transition:
+            background 0.2s,
+            transform 0.2s;
+        flex: 0 0 auto;
+        width: calc(50% - 0.5rem);
+
+        @include bp.above(tablet) {
+            width: auto;
+            flex: 1 1 0;
+            border-radius: 0;
+            border-right: 1px solid $border;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        &:hover {
+            background: rgba(43, 127, 212, 0.06);
+            transform: translateY(-3px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    .icon {
+        color: $primary;
+        opacity: 0.9;
+    }
+
+    .name {
+        font-family: $font-heading;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: $text-muted;
+        text-align: center;
+        line-height: 1.3;
+    }
+}

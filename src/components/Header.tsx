@@ -1,38 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ShieldCheck, Menu, X, Sun, Moon } from 'lucide-react';
+import { Bird, Menu, X, Phone } from 'lucide-react';
 import { businessData } from '../data';
 import s from './Header.module.scss';
 
-type Theme = 'light' | 'dark';
-
-function getStoredTheme(): Theme {
-    if (typeof window === 'undefined') return 'light';
-    const stored = localStorage.getItem('theme');
-    if (stored === 'light' || stored === 'dark') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-}
-
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [theme, setTheme] = useState<Theme>(getStoredTheme);
     const reducedMotion = useReducedMotion();
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () =>
-        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
     return (
         <header className={s.header}>
             <div className={s.inner}>
                 <a href="#" className={s.logo}>
-                    <ShieldCheck size={28} className={s.icon} />
+                    <Bird size={26} className={s.icon} />
                     {businessData.name}
                 </a>
 
@@ -42,32 +22,23 @@ export default function Header() {
                             {item.label}
                         </a>
                     ))}
-                    <button
-                        className={s.themeToggle}
-                        onClick={toggleTheme}
-                        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                    <a
+                        href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                        className={s.cta}
                     >
-                        {theme === 'light' ? (
-                            <Moon size={18} />
-                        ) : (
-                            <Sun size={18} />
-                        )}
-                    </button>
-                    <a href="#contact" className={s.cta}>
-                        Get Free Quote
+                        <Phone size={15} />
+                        Call Us
                     </a>
                 </nav>
 
-                <div className={s.rightGroup}>
-                    <button
-                        className={s.mobileMenuBtn}
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                        aria-expanded={menuOpen}
-                    >
-                        {menuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
+                <button
+                    className={s.mobileMenuBtn}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={menuOpen}
+                >
+                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
             </div>
 
             <AnimatePresence>
@@ -89,23 +60,13 @@ export default function Header() {
                                 {item.label}
                             </a>
                         ))}
-                        <button
-                            className={s.themeToggleMobile}
-                            onClick={toggleTheme}
-                            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-                        >
-                            {theme === 'light' ? (
-                                <Moon size={18} />
-                            ) : (
-                                <Sun size={18} />
-                            )}
-                        </button>
                         <a
-                            href="#contact"
+                            href={`tel:${businessData.phone.replace(/\s/g, '')}`}
                             className={s.mobileNavCta}
                             onClick={() => setMenuOpen(false)}
                         >
-                            Get Free Quote
+                            <Phone size={16} />
+                            Call {businessData.phone}
                         </a>
                     </motion.div>
                 )}

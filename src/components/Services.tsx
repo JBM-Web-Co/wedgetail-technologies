@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { Bug, Zap, MousePointer2, MapPin } from 'lucide-react';
+import { Map, ScanSearch, Layers, Sprout, Camera } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { businessData } from '../data';
 import { SectionHeader } from './UI';
@@ -7,9 +7,11 @@ import { useScrollReveal } from '../hooks';
 import s from './Services.module.scss';
 
 const iconMap: Record<string, ReactNode> = {
-    bug: <Bug size={26} />,
-    'spray-can': <Zap size={26} />,
-    rat: <MousePointer2 size={26} />,
+    map: <Map size={26} />,
+    'scan-search': <ScanSearch size={26} />,
+    layers: <Layers size={26} />,
+    sprout: <Sprout size={26} />,
+    camera: <Camera size={26} />,
 };
 
 export default function Services() {
@@ -20,9 +22,9 @@ export default function Services() {
         <section id="services" className={s.services}>
             <div className={s.inner}>
                 <SectionHeader
-                    label="Our Services"
-                    title="Comprehensive Pest Solutions"
-                    subtitle="From termites to rodents, we handle every pest challenge with precision and care."
+                    label="What We Do"
+                    title="Aerial Data Services"
+                    subtitle="Advanced UAV platforms and sensor payloads — delivering precise, actionable data across every application."
                 />
                 <div ref={ref} className={s.grid}>
                     {businessData.services.map((svc, i) => (
@@ -30,10 +32,10 @@ export default function Services() {
                             key={svc.title}
                             className={s.card}
                             initial={
-                                reducedMotion ? false : { opacity: 0, y: 24 }
+                                reducedMotion ? false : { opacity: 0, y: 28 }
                             }
                             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.45, delay: i * 0.12 }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
                         >
                             <div className={s.icon}>
                                 {iconMap[svc.iconName]}
@@ -43,10 +45,8 @@ export default function Services() {
                         </motion.article>
                     ))}
                 </div>
-                <p className={s.area}>
-                    <MapPin size={16} /> Servicing all {businessData.city} metro
-                    areas — {businessData.areas.slice(0, 4).join(', ')} &amp;
-                    more.
+                <p className={s.coverage}>
+                    Covering all areas across Australia
                 </p>
             </div>
         </section>

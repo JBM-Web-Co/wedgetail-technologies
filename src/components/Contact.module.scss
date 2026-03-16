@@ -1,12 +1,75 @@
-﻿@use '../styles/variables' as *;
+@use '../styles/variables' as *;
 @use '../styles/breakpoints' as bp;
 
 .contact {
     @include section-padding;
-    background: $surface;
+    background: $bg;
 
     .inner {
         @include container;
+    }
+
+    .callBanner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        background: $surface;
+        border: 1px solid rgba(43, 127, 212, 0.25);
+        border-radius: $radius-lg;
+        padding: 1.5rem 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .callBannerText {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .callLabel {
+        font-size: 0.85rem;
+        color: $text-muted;
+    }
+
+    .callNumber {
+        font-family: $font-heading;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #eef2ff;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .callBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: $primary;
+        color: #ffffff;
+        padding: 0.85rem 1.75rem;
+        border-radius: $radius;
+        font-weight: 700;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        transition:
+            background 0.2s,
+            transform 0.15s;
+
+        &:hover {
+            background: $primary-hover;
+            transform: translateY(-1px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            &:hover {
+                transform: none;
+            }
+        }
     }
 
     .grid {
@@ -34,16 +97,16 @@
 
     .infoTitle {
         font-family: $font-heading;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 700;
         color: $text;
         margin-bottom: 0.5rem;
     }
 
     .infoText {
-        font-size: 0.95rem;
+        font-size: 0.93rem;
         color: $text-muted;
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .item {
@@ -56,7 +119,7 @@
         width: 40px;
         height: 40px;
         border-radius: $radius;
-        background: $primary-light;
+        background: rgba(43, 127, 212, 0.1);
         color: $primary;
         display: flex;
         align-items: center;
@@ -65,18 +128,19 @@
     }
 
     .itemLabel {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         color: $text-muted;
+        margin-bottom: 0.15rem;
     }
 
     .itemValue {
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.93rem;
         color: $text;
     }
 
     .form {
-        background: $bg;
+        background: $surface;
         border: 1px solid $border;
         border-radius: $radius-lg;
         padding: 2rem;
@@ -84,10 +148,12 @@
 }
 
 .formSuccess {
-    background: $primary-light;
+    background: rgba(43, 127, 212, 0.1);
+    border: 1px solid rgba(43, 127, 212, 0.3);
     color: $primary;
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: $radius;
     text-align: center;
     font-weight: 600;
+    line-height: 1.5;
 }

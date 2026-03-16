@@ -1,4 +1,4 @@
-﻿@use '../styles/variables' as *;
+@use '../styles/variables' as *;
 @use '../styles/breakpoints' as bp;
 
 .stickyCta {
@@ -8,12 +8,9 @@
     right: 0;
     z-index: 90;
     padding: 0.75rem 1.5rem;
-    background: $nav-bg;
-    backdrop-filter: blur(8px);
-    border-top: 1px solid $border;
-    transition:
-        background 0.3s,
-        border-color 0.3s;
+    background: rgba(6, 13, 26, 0.92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(43, 127, 212, 0.14);
 
     @include bp.above(tablet) {
         display: none;
@@ -26,9 +23,10 @@
         justify-content: center;
         gap: 0.5rem;
         background: $primary;
-        color: $primary-fg;
-        padding: 0.85rem;
+        color: #ffffff;
+        padding: 0.9rem;
         border-radius: $radius;
+        font-family: $font-heading;
         font-weight: 700;
         font-size: 1rem;
         transition: background 0.2s;

@@ -1,11 +1,10 @@
-﻿@use '../styles/variables' as *;
+@use '../styles/variables' as *;
 @use '../styles/breakpoints' as bp;
 
 .footer {
     background: var(--footer-bg);
     color: var(--footer-text);
-    padding: 3rem 0 1.5rem;
-    transition: background 0.3s;
+    padding: 4rem 0 1.75rem;
 
     .inner {
         @include container;
@@ -14,8 +13,8 @@
     .grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
-        margin-bottom: 2rem;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
 
         & > *:first-child {
             width: 100%;
@@ -36,35 +35,64 @@
 
     .brand {
         font-family: $font-heading;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: var(--footer-heading);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .brandIcon {
+        color: $primary;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        color: $primary;
+        font-weight: 500;
         margin-bottom: 0.75rem;
     }
 
     .desc {
-        font-size: 0.88rem;
+        font-size: 0.86rem;
         color: var(--footer-muted);
         line-height: 1.7;
-        max-width: 320px;
+        max-width: 340px;
     }
 
     .colTitle {
         font-family: $font-heading;
-        font-size: 0.95rem;
+        font-size: 0.88rem;
         font-weight: 600;
         color: var(--footer-heading);
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
     .links {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.6rem;
     }
 
     .link {
-        font-size: 0.88rem;
+        font-size: 0.86rem;
+        color: var(--footer-muted);
+        transition: color 0.2s;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .contactItem {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.86rem;
         color: var(--footer-muted);
         transition: color 0.2s;
 
@@ -76,15 +104,18 @@
     .bottom {
         border-top: 1px solid var(--footer-border);
         padding-top: 1.5rem;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 0.8rem;
         color: var(--footer-muted);
     }
 
     .attribution {
-        margin-top: 0.5rem;
-        font-size: 0.75rem;
+        font-size: 0.78rem;
         color: var(--footer-muted);
-        opacity: 0.6;
+        opacity: 0.55;
     }
 }

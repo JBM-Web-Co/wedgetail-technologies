@@ -1,132 +1,99 @@
+// HANDOVER NOTE: Replace all placeholder values before going live.
+// Search for [PLACEHOLDER] to find every field that needs updating.
+//
+// Required before launch:
+//   1. Update CLIENT_URL in HomePage.tsx to the client's real domain
+//   2. Confirm phone, email, and ABN values with client
+//   3. Replace placeholder images with real drone/aerial photography
+
 import type { BusinessData } from './types';
 
 export const businessData: BusinessData = {
-    name: 'PestGuard Pro',
-    tagline: "Sydney's Trusted Pest Control Experts",
+    name: 'Wedgetail Technologies',
+    tagline: 'A Higher Perspective in Aerial Data',
     description:
-        'Professional pest control services for homes and businesses across Sydney. Licensed, insured, and eco-friendly solutions that keep your family safe.',
-    phone: '1300 789 456',
-    email: 'info@pestguardpro.com.au',
-    address: '42 Harbour Street',
-    city: 'Sydney',
+        'Wedgetail Technologies provides advanced aerial data solutions using the latest drone technology and sensor payloads. We deliver accurate and actionable insights for agriculture, renewable energy, construction, mining, and land development.',
+    phone: '0467 944 935',
+    email: 'wedgetailtechnologies@gmail.com',
+    address: '',
+    city: 'Armidale',
     state: 'NSW',
-    postcode: '2000',
-    hours: 'Mon-Sat: 7am - 6pm',
+    postcode: '',
+    hours: 'Mon–Fri: 7:00am – 5:00pm',
     navItems: [
-        { label: 'Why Us', href: '#benefits' },
         { label: 'Services', href: '#services' },
-        { label: 'Reviews', href: '#reviews' },
-        { label: 'FAQ', href: '#faq' },
+        { label: 'Industries', href: '#industries' },
+        { label: 'About', href: '#about' },
+        { label: 'Contact', href: '#contact' },
     ],
     benefits: [
         {
-            title: 'Same-Day Service',
+            title: 'Precision Accuracy',
             description:
-                'Emergency callouts within 2 hours across Sydney metro.',
-            iconName: 'clock',
+                'Centimetre-level data accuracy powered by advanced UAV platforms and industry-leading sensor payloads.',
+            iconName: 'crosshair',
         },
         {
-            title: 'Eco-Friendly',
+            title: 'Nationwide Coverage',
             description:
-                'Child and pet-safe treatments using low-toxicity formulas.',
-            iconName: 'leaf',
+                'We cover all areas across Australia — from remote rural stations to major development sites.',
+            iconName: 'globe',
         },
         {
-            title: 'Licensed & Insured',
+            title: 'Fast Turnaround',
             description:
-                'Fully licensed technicians with $20M public liability cover.',
-            iconName: 'shield',
+                'Rapid data capture and processing so you receive actionable insights without delay.',
+            iconName: 'zap',
         },
         {
-            title: '12-Month Warranty',
+            title: 'Proven Expertise',
             description:
-                'All treatments backed by our industry-leading guarantee.',
-            iconName: 'badge-check',
-        },
-        {
-            title: 'Free Inspections',
-            description: 'Comprehensive property assessment at no charge.',
-            iconName: 'search',
-        },
-        {
-            title: '24/7 Support',
-            description:
-                'Round-the-clock phone support for urgent pest issues.',
-            iconName: 'headphones',
+                'Specialists in drone data collection, processing, and delivering results that drive smarter decisions.',
+            iconName: 'award',
         },
     ],
     services: [
         {
-            title: 'Termite Control',
+            title: 'Orthomosaic Mapping',
             description:
-                'Full termite inspections, treatment plans, and ongoing protection for your property.',
-            iconName: 'bug',
+                'High-resolution aerial map generation stitched into precise orthomosaic outputs for planning, monitoring, and land analysis.',
+            iconName: 'map',
         },
         {
-            title: 'Cockroach Treatment',
+            title: 'Photographic & Thermographic Inspections',
             description:
-                'Targeted gel bait and spray treatments to eliminate cockroach colonies permanently.',
-            iconName: 'spray-can',
+                'Detailed photographic and thermal imaging asset inspections for solar panels, powerlines, infrastructure, and more.',
+            iconName: 'scan-search',
         },
         {
-            title: 'Rodent Removal',
+            title: 'LiDAR / Point Cloud Data',
             description:
-                'Humane and effective rodent control with professional entry-point sealing.',
-            iconName: 'rat',
+                '3D terrain and structure capture using LiDAR technology, delivering dense point cloud data for engineering and survey work.',
+            iconName: 'layers',
+        },
+        {
+            title: 'Weed Mapping & Application Spray Files',
+            description:
+                'Precision weed detection from the air combined with the creation of application spot spray files for targeted treatment.',
+            iconName: 'sprout',
+        },
+        {
+            title: 'Aerial Photography',
+            description:
+                'Professional cinematic aerial imagery for marketing, documentation, and progress reporting across any industry.',
+            iconName: 'camera',
         },
     ],
-    testimonials: [
-        {
-            name: 'Sarah Mitchell',
-            text: "PestGuard Pro saved our home from a termite infestation we didn't even know about. Their team was professional, thorough, and incredibly knowledgeable.",
-            rating: 5,
-            location: 'Bondi, NSW',
-        },
-        {
-            name: 'James Chen',
-            text: 'Fast, reliable, and reasonably priced. They came within hours of my call and sorted out our cockroach problem permanently.',
-            rating: 5,
-            location: 'Parramatta, NSW',
-        },
-        {
-            name: 'Emma Williams',
-            text: 'The team was fantastic with our rodent issue. They sealed all entry points and the warranty gives us real peace of mind.',
-            rating: 5,
-            location: 'Manly, NSW',
-        },
+    industries: [
+        { label: 'Agriculture', iconName: 'wheat' },
+        { label: 'Renewable Energy', iconName: 'sun' },
+        { label: 'Construction', iconName: 'hard-hat' },
+        { label: 'Mining', iconName: 'gem' },
+        { label: 'Land Development', iconName: 'map-pinned' },
     ],
-    faqs: [
-        {
-            question: 'How quickly can you respond to an emergency?',
-            answer: 'We offer same-day emergency callouts across Sydney metro. In most cases, we can have a technician at your property within 2 hours of your call.',
-        },
-        {
-            question: 'Are your treatments safe for children and pets?',
-            answer: "Yes. We use low-toxicity, eco-friendly treatments that are safe for your family and pets. We'll advise on any temporary precautions if needed.",
-        },
-        {
-            question: 'Do you offer free inspections?',
-            answer: 'Absolutely. We provide comprehensive free inspections for all residential properties. Our technicians will assess the issue and provide a detailed quote on the spot.',
-        },
-        {
-            question: 'What areas do you service?',
-            answer: 'We service all of Sydney metro, from the Northern Beaches to Sutherland, and out to the Blue Mountains. Contact us to confirm coverage in your area.',
-        },
-        {
-            question: 'What warranty do you provide?',
-            answer: "All our treatments come with a 12-month warranty. If pests return within the warranty period, we'll re-treat at no additional cost.",
-        },
-    ],
-    rating: 4.9,
-    reviewCount: 847,
-    areas: [
-        'Sydney CBD',
-        'North Shore',
-        'Eastern Suburbs',
-        'Inner West',
-        'Northern Beaches',
-        'Sutherland Shire',
-        'Western Sydney',
-        'Blue Mountains',
-    ],
+    testimonials: [],
+    faqs: [],
+    rating: 5.0,
+    reviewCount: 0,
+    areas: ['All areas across Australia'],
 };

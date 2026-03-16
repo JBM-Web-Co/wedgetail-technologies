@@ -1,43 +1,25 @@
 @use 'variables' as *;
 
+// ── Wedgetail Technologies — Always Dark Theme ───────────────────────────────
 :root {
-    --bg: #ffffff;
-    --surface: #f8fafc;
-    --text: #0f172a;
-    --text-muted: #64748b;
-    --text-light: #94a3b8;
-    --border: #e2e8f0;
-    --border-light: #f1f5f9;
-    --primary-light: #d1fae5;
-    --nav-bg: rgba(255, 255, 255, 0.92);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.06);
-    --footer-bg: #0f172a;
-    --footer-text: #cbd5e1;
-    --footer-heading: #ffffff;
-    --footer-muted: #94a3b8;
-    --footer-border: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme='dark'] {
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --text: #f1f5f9;
-    --text-muted: #94a3b8;
-    --text-light: #64748b;
-    --border: #334155;
-    --border-light: #475569;
-    --primary-light: rgba(5, 150, 105, 0.2);
-    --nav-bg: rgba(15, 23, 42, 0.92);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.4);
-    --footer-bg: #020617;
-    --footer-text: #94a3b8;
-    --footer-heading: #f1f5f9;
-    --footer-muted: #64748b;
-    --footer-border: rgba(255, 255, 255, 0.06);
+    --bg: #060d1a;
+    --surface: #0b1929;
+    --surface-2: #112238;
+    --text: #eef2ff;
+    --text-muted: #7a8fa8;
+    --text-light: #4a6280;
+    --border: rgba(43, 127, 212, 0.14);
+    --border-light: rgba(43, 127, 212, 0.07);
+    --primary-light: rgba(43, 127, 212, 0.12);
+    --nav-bg: rgba(6, 13, 26, 0.88);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+    --footer-bg: #030a14;
+    --footer-text: #7a8fa8;
+    --footer-heading: #eef2ff;
+    --footer-muted: #4a6280;
+    --footer-border: rgba(43, 127, 212, 0.12);
 }
 
 *,
@@ -63,9 +45,6 @@ body {
     background: $bg;
     line-height: 1.6;
     overflow-x: hidden;
-    transition:
-        color 0.3s,
-        background 0.3s;
 }
 
 h1,
@@ -77,24 +56,29 @@ h6 {
     font-family: $font-heading;
     line-height: 1.15;
 }
+
 a {
     color: inherit;
     text-decoration: none;
 }
+
 button {
     cursor: pointer;
     border: none;
     background: none;
     font: inherit;
 }
+
 img {
     max-width: 100%;
     display: block;
 }
+
 ul,
 ol {
     list-style: none;
 }
+
 input,
 textarea,
 select {

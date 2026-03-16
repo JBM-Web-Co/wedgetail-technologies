@@ -1,12 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-    Clock,
-    Leaf,
-    ShieldCheck,
-    BadgeCheck,
-    Search,
-    Headphones,
-} from 'lucide-react';
+import { Crosshair, Globe, Zap, Award } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { businessData } from '../data';
 import { SectionHeader } from './UI';
@@ -14,12 +7,10 @@ import { useScrollReveal } from '../hooks';
 import s from './Benefits.module.scss';
 
 const iconMap: Record<string, ReactNode> = {
-    clock: <Clock size={22} />,
-    leaf: <Leaf size={22} />,
-    shield: <ShieldCheck size={22} />,
-    'badge-check': <BadgeCheck size={22} />,
-    search: <Search size={22} />,
-    headphones: <Headphones size={22} />,
+    crosshair: <Crosshair size={22} />,
+    globe: <Globe size={22} />,
+    zap: <Zap size={22} />,
+    award: <Award size={22} />,
 };
 
 export default function Benefits() {
@@ -27,12 +18,12 @@ export default function Benefits() {
     const reducedMotion = useReducedMotion();
 
     return (
-        <section id="benefits" className={s.benefits}>
+        <section id="why-us" className={s.benefits}>
             <div className={s.inner}>
                 <SectionHeader
                     label="Why Choose Us"
-                    title="The PestGuard Difference"
-                    subtitle="We combine cutting-edge technology with eco-friendly solutions to deliver lasting results."
+                    title="The Wedgetail Difference"
+                    subtitle="Combining cutting-edge UAV technology with deep field expertise to deliver data you can act on."
                 />
                 <div ref={ref} className={s.grid}>
                     {businessData.benefits.map((b, i) => (
@@ -43,7 +34,7 @@ export default function Benefits() {
                                 reducedMotion ? false : { opacity: 0, y: 20 }
                             }
                             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.4, delay: i * 0.08 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
                         >
                             <div className={s.icon}>{iconMap[b.iconName]}</div>
                             <h3 className={s.title}>{b.title}</h3>

@@ -56,13 +56,37 @@ export default function Contact() {
             <div className={s.inner}>
                 <SectionHeader
                     label="Contact"
-                    title="Get In Touch"
-                    subtitle="Ready for a pest-free home? Reach out for a free quote."
+                    title="Get in Touch"
+                    subtitle="Ready to take a higher perspective? Call us directly or send an enquiry below."
                 />
+
+                <div className={s.callBanner}>
+                    <div className={s.callBannerText}>
+                        <p className={s.callLabel}>
+                            Prefer to talk? Call us directly:
+                        </p>
+                        <a
+                            href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                            className={s.callNumber}
+                        >
+                            {businessData.phone}
+                        </a>
+                    </div>
+                    <a
+                        href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                        className={s.callBtn}
+                    >
+                        <Phone size={18} />
+                        Call Now
+                    </a>
+                </div>
+
                 <div className={s.grid}>
                     <div className={s.info}>
                         <div>
-                            <h3 className={s.infoTitle}>{businessData.name}</h3>
+                            <h3 className={s.infoTitle}>
+                                {businessData.name}
+                            </h3>
                             <p className={s.infoText}>
                                 {businessData.description}
                             </p>
@@ -73,9 +97,12 @@ export default function Contact() {
                             </div>
                             <div>
                                 <div className={s.itemLabel}>Phone</div>
-                                <div className={s.itemValue}>
+                                <a
+                                    href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                                    className={s.itemValue}
+                                >
                                     {businessData.phone}
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div className={s.item}>
@@ -94,10 +121,11 @@ export default function Contact() {
                                 <MapPin size={18} />
                             </div>
                             <div>
-                                <div className={s.itemLabel}>Address</div>
+                                <div className={s.itemLabel}>
+                                    Service Area
+                                </div>
                                 <div className={s.itemValue}>
-                                    {businessData.address}, {businessData.city}{' '}
-                                    {businessData.state} {businessData.postcode}
+                                    All areas across Australia
                                 </div>
                             </div>
                         </div>
@@ -116,7 +144,8 @@ export default function Contact() {
                     <div className={s.form}>
                         {submitted ? (
                             <div className={s.formSuccess}>
-                                Thank you! We'll be in touch within 24 hours.
+                                Thank you for your enquiry! We'll be in touch
+                                shortly.
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} noValidate>
@@ -156,10 +185,10 @@ export default function Contact() {
                                     value={form.message}
                                     error={errors.message}
                                     onChange={update('message')}
-                                    placeholder="Tell us about your pest issue..."
+                                    placeholder="Tell us about your project or data requirements..."
                                     required
                                 />
-                                <Button type="submit">Send Message</Button>
+                                <Button type="submit">Send Enquiry</Button>
                             </form>
                         )}
                     </div>

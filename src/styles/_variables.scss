@@ -1,22 +1,25 @@
-﻿@use 'breakpoints' as bp;
+@use 'breakpoints' as bp;
 
-// Static tokens (don't change with theme)
-$primary: #059669;
-$primary-hover: #047857;
+// ── Wedgetail Technologies Brand Tokens ──────────────────────────────────────
+
+// Static tokens
+$primary: #2b7fd4;
+$primary-hover: #1a67b4;
 $primary-fg: #ffffff;
-$accent: #f59e0b;
-$accent-hover: #d97706;
+$accent: #e8a020;
+$accent-hover: #c78a15;
 $radius: 8px;
 $radius-lg: 12px;
-$radius-xl: 16px;
-$font-heading: 'Outfit', sans-serif;
+$radius-xl: 20px;
+$font-heading: 'Space Grotesk', sans-serif;
 $font-body: 'Inter', sans-serif;
-$container: 1200px;
-$header-height: 72px;
+$container: 1280px;
+$header-height: 80px;
 
-// Theme-switching tokens (powered by CSS custom properties in global.scss)
+// Theme tokens (always dark for Wedgetail)
 $bg: var(--bg);
 $surface: var(--surface);
+$surface-2: var(--surface-2);
 $text: var(--text);
 $text-muted: var(--text-muted);
 $text-light: var(--text-light);
@@ -38,8 +41,8 @@ $shadow-lg: var(--shadow-lg);
 }
 
 @mixin section-padding {
-    padding: 4rem 0;
+    padding: 5rem 0;
     @include bp.above(tablet) {
-        padding: 6rem 0;
+        padding: 7rem 0;
     }
 }

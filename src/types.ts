@@ -15,6 +15,11 @@ export type Service = {
     iconName: string;
 };
 
+export type Industry = {
+    label: string;
+    iconName: string;
+};
+
 export type Testimonial = {
     name: string;
     text: string;
@@ -50,6 +55,7 @@ export type BusinessData = {
     navItems: NavItem[];
     benefits: Benefit[];
     services: Service[];
+    industries: Industry[];
     testimonials: Testimonial[];
     faqs: FAQItem[];
     rating: number;

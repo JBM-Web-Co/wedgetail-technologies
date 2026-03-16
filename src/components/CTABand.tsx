@@ -1,4 +1,5 @@
-import { ArrowRight } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import { businessData } from '../data';
 import { useScrollReveal } from '../hooks';
 import s from './CTABand.module.scss';
 
@@ -11,13 +12,21 @@ export default function CTABand() {
                 ref={ref}
                 className={`${s.inner} ${isVisible ? s.fadeUpVisible : s.fadeUp}`}
             >
-                <h2 className={s.title}>Ready to Reclaim Your Home?</h2>
+                <p className={s.eyebrow}>Ready to get started?</p>
+                <h2 className={s.title}>
+                    Take a higher perspective on your next project.
+                </h2>
                 <p className={s.text}>
-                    Book a free inspection today and get a same-day quote. No
-                    obligation, no hidden fees.
+                    Talk to our team about how aerial data can help your
+                    business monitor assets, improve efficiency, and make
+                    smarter decisions.
                 </p>
-                <a href="#contact" className={s.btn}>
-                    Get a Free Quote <ArrowRight size={20} />
+                <a
+                    href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                    className={s.btn}
+                >
+                    <Phone size={20} />
+                    Call Us — {businessData.phone}
                 </a>
             </div>
         </section>

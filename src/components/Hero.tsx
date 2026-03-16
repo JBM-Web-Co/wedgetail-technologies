@@ -1,8 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Phone, ShieldCheck } from 'lucide-react';
+import { Phone, ChevronDown } from 'lucide-react';
 import { businessData } from '../data';
-import { Button } from './UI';
-import { ShieldRadarSVG } from './SVGPlaceholders';
 import s from './Hero.module.scss';
 
 export default function Hero() {
@@ -11,72 +9,79 @@ export default function Hero() {
         reducedMotion
             ? {}
             : {
-                  initial: { opacity: 0, y: 20 },
+                  initial: { opacity: 0, y: 32 },
                   animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.5, delay },
+                  transition: { duration: 0.75, delay },
               };
 
     return (
-        <section className={s.hero}>
+        <section className={s.hero} aria-label="Hero">
+            <div className={s.bg} aria-hidden="true">
+                {/* [PLACEHOLDER] Replace with actual high-resolution aerial photography */}
+                <img
+                    src="https://images.unsplash.com/photo-1473218861634-bdd29fe4c22d?auto=format&fit=crop&w=1920&q=80"
+                    alt=""
+                    className={s.bgImg}
+                    fetchPriority="high"
+                />
+                <div className={s.overlay} />
+            </div>
+
             <div className={s.inner}>
-                <div className={s.content}>
-                    <motion.div className={s.badge} {...anim(0)}>
-                        Trusted by 800+ Sydney families
-                    </motion.div>
-                    <motion.h1 className={s.headline} {...anim(0.1)}>
-                        Protect Your Home From{' '}
-                        <span className={s.highlight}>Unwanted Pests</span>
-                    </motion.h1>
-                    <motion.p className={s.subheadline} {...anim(0.2)}>
-                        {businessData.description}
-                    </motion.p>
-                    <motion.div className={s.ctas} {...anim(0.3)}>
-                        <Button href="#contact">
-                            Get a Free Quote <ArrowRight size={18} />
-                        </Button>
-                        <Button
-                            variant="secondary"
-                            href={`tel:${businessData.phone.replace(/\s/g, '')}`}
-                        >
-                            <Phone size={18} /> Call Now
-                        </Button>
-                    </motion.div>
-                    <motion.p className={s.risk} {...anim(0.35)}>
-                        <ShieldCheck size={16} /> No obligation &bull;
-                        Eco-friendly treatments &bull; 12-month warranty
-                    </motion.p>
-                    <motion.div className={s.stats} {...anim(0.4)}>
-                        <div className={s.stat}>
-                            <div className={s.statValue}>
-                                {businessData.rating}
-                            </div>
-                            <div className={s.statLabel}>Google Rating</div>
-                        </div>
-                        <div className={s.stat}>
-                            <div className={s.statValue}>
-                                {businessData.reviewCount}+
-                            </div>
-                            <div className={s.statLabel}>Happy Clients</div>
-                        </div>
-                        <div className={s.stat}>
-                            <div className={s.statValue}>15+</div>
-                            <div className={s.statLabel}>Years Experience</div>
-                        </div>
-                    </motion.div>
-                </div>
-                <motion.div
-                    className={s.image}
-                    {...(reducedMotion
-                        ? {}
-                        : {
-                              initial: { opacity: 0, scale: 0.9 },
-                              animate: { opacity: 1, scale: 1 },
-                              transition: { duration: 0.6, delay: 0.2 },
-                          })}
-                >
-                    <ShieldRadarSVG className="" />
+                <motion.div className={s.eyebrow} {...anim(0)}>
+                    Advanced UAV Aerial Data Solutions
+                </motion.div>
+
+                <motion.h1 className={s.headline} {...anim(0.12)}>
+                    A Higher Perspective
+                    <br />
+                    <span className={s.highlight}>in Aerial Data</span>
+                </motion.h1>
+
+                <motion.p className={s.sub} {...anim(0.24)}>
+                    Like the wedge-tailed eagle, we take a higher
+                    perspective—capturing detailed aerial data that helps your
+                    business monitor assets, improve efficiency, and make
+                    smarter decisions.
+                </motion.p>
+
+                <motion.div className={s.ctas} {...anim(0.36)}>
+                    <a
+                        href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                        className={s.btnPrimary}
+                    >
+                        <Phone size={20} />
+                        Call Us — {businessData.phone}
+                    </a>
+                    <a href="#services" className={s.btnOutline}>
+                        Our Services
+                        <ChevronDown size={18} />
+                    </a>
+                </motion.div>
+
+                <motion.div className={s.tags} {...anim(0.48)}>
+                    <span className={s.tagsLabel}>Serving:</span>
+                    {[
+                        'Agriculture',
+                        'Renewable Energy',
+                        'Construction',
+                        'Mining',
+                        'Land Development',
+                    ].map((ind) => (
+                        <span key={ind} className={s.tag}>
+                            {ind}
+                        </span>
+                    ))}
                 </motion.div>
             </div>
+
+            <a
+                href="#services"
+                className={s.scrollArrow}
+                aria-label="Scroll to services"
+            >
+                <ChevronDown size={30} />
+            </a>
         </section>
     );
 }

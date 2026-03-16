@@ -1,3 +1,4 @@
+import { Bird, Phone, Mail } from 'lucide-react';
 import { businessData } from '../data';
 import s from './Footer.module.scss';
 
@@ -7,8 +8,16 @@ export default function Footer() {
             <div className={s.inner}>
                 <div className={s.grid}>
                     <div>
-                        <div className={s.brand}>{businessData.name}</div>
-                        <p className={s.desc}>{businessData.description}</p>
+                        <div className={s.brand}>
+                            <Bird size={22} className={s.brandIcon} />
+                            {businessData.name}
+                        </div>
+                        <p className={s.tagline}>{businessData.tagline}</p>
+                        <p className={s.desc}>
+                            Advanced aerial data solutions using cutting-edge
+                            drone technology and sensor payloads — delivering
+                            actionable insights across Australia.
+                        </p>
                     </div>
                     <div>
                         <div className={s.colTitle}>Quick Links</div>
@@ -25,19 +34,34 @@ export default function Footer() {
                         </div>
                     </div>
                     <div>
-                        <div className={s.colTitle}>Areas We Serve</div>
+                        <div className={s.colTitle}>Contact</div>
                         <div className={s.links}>
-                            {businessData.areas.slice(0, 6).map((area) => (
-                                <span key={area} className={s.link}>
-                                    {area}
-                                </span>
-                            ))}
+                            <a
+                                href={`tel:${businessData.phone.replace(/\s/g, '')}`}
+                                className={s.contactItem}
+                            >
+                                <Phone size={14} />
+                                {businessData.phone}
+                            </a>
+                            <a
+                                href={`mailto:${businessData.email}`}
+                                className={s.contactItem}
+                            >
+                                <Mail size={14} />
+                                {businessData.email}
+                            </a>
+                            <span className={s.link}>
+                                {businessData.city}, {businessData.state}
+                            </span>
+                            <span className={s.link}>{businessData.hours}</span>
                         </div>
                     </div>
                 </div>
                 <div className={s.bottom}>
-                    &copy; {new Date().getFullYear()} {businessData.name}. All
-                    rights reserved. | ABN 12 345 678 901
+                    <span>
+                        &copy; {new Date().getFullYear()}{' '}
+                        {businessData.name}. All rights reserved.
+                    </span>
                     <p className={s.attribution}>Website by JBM Web Co</p>
                 </div>
             </div>

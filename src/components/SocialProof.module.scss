@@ -1,89 +1,134 @@
-﻿@use '../styles/variables' as *;
+@use '../styles/variables' as *;
 @use '../styles/breakpoints' as bp;
 
-.socialProof {
+.about {
     @include section-padding;
     background: $surface;
 
     .inner {
         @include container;
     }
-}
 
-.ratingBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-}
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
 
-.ratingStars {
-    display: flex;
-    gap: 0.25rem;
-    color: $accent;
-}
+        @include bp.above(laptop) {
+            flex-direction: row;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
 
-.ratingText {
-    font-family: $font-heading;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: $text;
-}
-
-.ratingSubtext {
-    font-size: 0.85rem;
-    color: $text-muted;
-}
-
-.testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.testimonialCard {
-    background: $bg;
-    border: 1px solid $border;
-    border-radius: $radius-lg;
-    padding: 1.75rem;
-    width: 100%;
-
-    @include bp.above(tablet) {
+    .content {
         flex: 1 1 0;
         min-width: 0;
-        width: auto;
     }
-}
 
-.testimonialStars {
-    display: flex;
-    gap: 0.15rem;
-    color: $accent;
-    margin-bottom: 1rem;
-}
+    .label {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $primary;
+        margin-bottom: 1rem;
+    }
 
-.testimonialText {
-    font-size: 0.95rem;
-    color: $text;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    font-style: italic;
-}
+    .headline {
+        font-family: $font-heading;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 700;
+        color: $text;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.01em;
+    }
 
-.testimonialAuthor {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
+    .highlight {
+        color: $primary;
+    }
 
-.testimonialName {
-    font-weight: 600;
-    font-size: 0.92rem;
-    color: $text;
-}
+    .body {
+        font-size: 1rem;
+        color: $text-muted;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
 
-.testimonialLocation {
-    font-size: 0.8rem;
-    color: $text-muted;
+        &:last-of-type {
+            margin-bottom: 1.75rem;
+        }
+    }
+
+    .points {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .point {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.92rem;
+        color: $text-muted;
+        line-height: 1.5;
+    }
+
+    .check {
+        color: $primary;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+    .imageWrap {
+        flex: 0 0 auto;
+        position: relative;
+        width: 100%;
+
+        @include bp.above(laptop) {
+            width: 460px;
+        }
+    }
+
+    .image {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+        border-radius: $radius-xl;
+        border: 1px solid $border;
+
+        @include bp.below(laptop) {
+            height: 340px;
+        }
+    }
+
+    .imageBadge {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        background: rgba(6, 13, 26, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(43, 127, 212, 0.25);
+        border-radius: $radius-lg;
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .badgeValue {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary;
+        line-height: 1;
+    }
+
+    .badgeLabel {
+        font-size: 0.78rem;
+        color: #7a8fa8;
+        font-weight: 500;
+    }
 }
