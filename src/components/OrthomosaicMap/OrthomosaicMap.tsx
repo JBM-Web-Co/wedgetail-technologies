@@ -153,8 +153,8 @@ export const OrthomosaicMap = () => (
     <div className={s.wrapper}>
         <div className={s.rotating}>
             <svg
-                width="660"
-                height="660"
+                width="900"
+                height="900"
                 viewBox="0 0 460 460"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"

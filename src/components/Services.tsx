@@ -13,6 +13,7 @@ import { businessData } from '../data';
 import { SectionHeader } from './UI';
 import { useScrollReveal } from '../hooks';
 import { OrthomosaicMap } from './OrthomosaicMap/OrthomosaicMap';
+import { LidarPointCloud } from './LidarPointCloud/LidarPointCloud';
 import s from './Services.module.scss';
 
 const iconMap: Record<string, ReactNode> = {
@@ -99,6 +100,10 @@ export default function Services() {
                                 {svc.title === 'Orthomosaic Mapping' ? (
                                     <div className={s.cardImage}>
                                         <OrthomosaicMap />
+                                    </div>
+                                ) : svc.title === 'LiDAR / Point Cloud Data' ? (
+                                    <div className={s.cardImage}>
+                                        <LidarPointCloud />
                                     </div>
                                 ) : (
                                     <div

@@ -10,9 +10,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    animation: orthoRotate 30s linear infinite;
+    width: 750px;
+    height: 750px;
+    animation: orthoRotate 60s linear infinite;
 
     @media (prefers-reduced-motion: reduce) {
         animation: none;
