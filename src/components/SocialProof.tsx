@@ -130,9 +130,8 @@ export default function SocialProof() {
                         animate={isVisible ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
                     >
-                        {/* [PLACEHOLDER] Replace with a real drone/aerial photography asset */}
                         <img
-                            src="https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&w=900&q=80"
+                            src="/drone.png"
                             alt="Aerial drone capturing landscape data"
                             className={s.image}
                         />
