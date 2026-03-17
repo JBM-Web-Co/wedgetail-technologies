@@ -60,17 +60,18 @@ export const businessData: BusinessData = {
             iconName: 'map',
         },
         {
-            title: 'Photographic & Thermographic Inspections',
-            description:
-                'Detailed photographic and thermal imaging asset inspections for solar panels, powerlines, infrastructure, and more.',
-            iconName: 'scan-search',
-        },
-        {
             title: 'LiDAR / Point Cloud Data',
             description:
                 '3D terrain and structure capture using LiDAR technology, delivering dense point cloud data for engineering and survey work.',
             iconName: 'layers',
         },
+        {
+            title: 'Photographic & Thermographic Inspections',
+            description:
+                'Detailed photographic and thermal imaging asset inspections for solar panels, powerlines, infrastructure, and more.',
+            iconName: 'scan-search',
+        },
+
         {
             title: 'Weed Mapping & Application Spray Files',
             description:

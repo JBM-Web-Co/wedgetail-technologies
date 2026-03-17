@@ -12,6 +12,7 @@ import type { ReactNode } from 'react';
 import { businessData } from '../data';
 import { SectionHeader } from './UI';
 import { useScrollReveal } from '../hooks';
+import { OrthomosaicMap } from './OrthomosaicMap/OrthomosaicMap';
 import s from './Services.module.scss';
 
 const iconMap: Record<string, ReactNode> = {
@@ -95,24 +96,30 @@ export default function Services() {
                                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
                             >
-                                <div
-                                    className={`${s.cardImage} ${!svc.image ? s.cardImageFallback : ''}`}
-                                >
-                                    {svc.image ? (
-                                        <img
-                                            src={svc.image}
-                                            alt={svc.title}
-                                            loading="lazy"
-                                        />
-                                    ) : (
-                                        <div
-                                            className={s.fallbackIcon}
-                                            aria-hidden="true"
-                                        >
-                                            {iconMap[svc.iconName]}
-                                        </div>
-                                    )}
-                                </div>
+                                {svc.title === 'Orthomosaic Mapping' ? (
+                                    <div className={s.cardImage}>
+                                        <OrthomosaicMap />
+                                    </div>
+                                ) : (
+                                    <div
+                                        className={`${s.cardImage} ${!svc.image ? s.cardImageFallback : ''}`}
+                                    >
+                                        {svc.image ? (
+                                            <img
+                                                src={svc.image}
+                                                alt={svc.title}
+                                                loading="lazy"
+                                            />
+                                        ) : (
+                                            <div
+                                                className={s.fallbackIcon}
+                                                aria-hidden="true"
+                                            >
+                                                {iconMap[svc.iconName]}
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                                 <div className={s.cardBody}>
                                     <h3 className={s.title}>{svc.title}</h3>
                                     <p className={s.desc}>{svc.description}</p>
