@@ -27,9 +27,7 @@ export default function Industries() {
                             key={ind.label}
                             className={s.item}
                             initial={
-                                reducedMotion
-                                    ? false
-                                    : { opacity: 0, y: 16 }
+                                reducedMotion ? false : { opacity: 0, y: 16 }
                             }
                             animate={isVisible ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.4, delay: i * 0.08 }}

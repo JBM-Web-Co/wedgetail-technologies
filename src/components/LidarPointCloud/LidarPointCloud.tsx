@@ -30,14 +30,22 @@ const elevationColor = (y: number): [number, number, number] => {
     }
     if (t < 0.25) {
         const f = (t - 0.08) / 0.17;
-        return [Math.round(10 + f * 10), Math.round(70 + f * 140), Math.round(230 - f * 60)];
+        return [
+            Math.round(10 + f * 10),
+            Math.round(70 + f * 140),
+            Math.round(230 - f * 60),
+        ];
     }
-    if (t < 0.50) {
+    if (t < 0.5) {
         const f = (t - 0.25) / 0.25;
-        return [Math.round(20 + f * 30), Math.round(210 - f * 10), Math.round(170 - f * 150)];
+        return [
+            Math.round(20 + f * 30),
+            Math.round(210 - f * 10),
+            Math.round(170 - f * 150),
+        ];
     }
     if (t < 0.72) {
-        const f = (t - 0.50) / 0.22;
+        const f = (t - 0.5) / 0.22;
         return [Math.round(50 + f * 190), Math.round(200 + f * 45), 20];
     }
     if (t < 0.88) {
@@ -54,26 +62,26 @@ const TREES: ReadonlyArray<TreeDef> = [
     // Back row — tall
     [-32, -30, 18, 7, 320],
     [-14, -34, 22, 8, 380],
-    [  6, -32, 20, 7, 340],
-    [ 24, -30, 24, 9, 420],
-    [ 38, -26, 17, 6, 280],
+    [6, -32, 20, 7, 340],
+    [24, -30, 24, 9, 420],
+    [38, -26, 17, 6, 280],
     [-38, -18, 16, 6, 260],
     // Mid row
-    [-28,  -8, 15, 6, 260],
-    [ -8, -12, 19, 7, 320],
-    [ 14,  -8, 16, 6, 270],
-    [ 32, -10, 21, 8, 360],
-    [ 42,   2, 14, 5, 220],
+    [-28, -8, 15, 6, 260],
+    [-8, -12, 19, 7, 320],
+    [14, -8, 16, 6, 270],
+    [32, -10, 21, 8, 360],
+    [42, 2, 14, 5, 220],
     // Front row — shorter
-    [-36,  14, 12, 5, 200],
-    [-16,  18, 14, 5, 220],
-    [  4,  22, 11, 4, 180],
-    [ 22,  16, 15, 6, 240],
-    [ 38,  20, 12, 5, 190],
+    [-36, 14, 12, 5, 200],
+    [-16, 18, 14, 5, 220],
+    [4, 22, 11, 4, 180],
+    [22, 16, 15, 6, 240],
+    [38, 20, 12, 5, 190],
     // Scattered individuals
-    [-44,   2, 13, 5, 200],
-    [-20,  -2, 10, 4, 160],
-    [ 10,   6,  9, 3.5, 140],
+    [-44, 2, 13, 5, 200],
+    [-20, -2, 10, 4, 160],
+    [10, 6, 9, 3.5, 140],
 ];
 
 const generatePoints = (): ReadonlyArray<Point3D> => {
@@ -128,11 +136,11 @@ const drawLegend = (
     const y = h - 112;
 
     const grad = ctx.createLinearGradient(0, y, 0, y + barH);
-    grad.addColorStop(0.00, 'rgb(240,15,20)');
-    grad.addColorStop(0.20, 'rgb(240,180,20)');
+    grad.addColorStop(0.0, 'rgb(240,15,20)');
+    grad.addColorStop(0.2, 'rgb(240,180,20)');
     grad.addColorStop(0.45, 'rgb(40,200,30)');
-    grad.addColorStop(0.70, 'rgb(20,170,230)');
-    grad.addColorStop(1.00, 'rgb(10,30,210)');
+    grad.addColorStop(0.7, 'rgb(20,170,230)');
+    grad.addColorStop(1.0, 'rgb(10,30,210)');
 
     ctx.fillStyle = grad;
     ctx.fillRect(x, y, barW, barH);
