@@ -3,12 +3,7 @@
 
 .ctaBand {
     @include section-padding;
-    background: linear-gradient(
-        135deg,
-        #0a1830 0%,
-        #0d2147 50%,
-        #0a1830 100%
-    );
+    background: linear-gradient(135deg, #0a1830 0%, #0d2147 50%, #0a1830 100%);
     border-top: 1px solid rgba(43, 127, 212, 0.18);
     border-bottom: 1px solid rgba(43, 127, 212, 0.18);
     text-align: center;

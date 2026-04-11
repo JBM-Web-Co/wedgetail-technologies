@@ -8,9 +8,7 @@ export default function Footer() {
             <div className={s.inner}>
                 <div className={s.grid}>
                     <div>
-                        <div className={s.brand}>
-                            {businessData.name}
-                        </div>
+                        <div className={s.brand}>{businessData.name}</div>
                         <p className={s.tagline}>{businessData.tagline}</p>
                         <p className={s.desc}>
                             Advanced aerial data solutions using cutting-edge
@@ -58,8 +56,8 @@ export default function Footer() {
                 </div>
                 <div className={s.bottom}>
                     <span>
-                        &copy; {new Date().getFullYear()}{' '}
-                        {businessData.name}. All rights reserved.
+                        &copy; {new Date().getFullYear()} {businessData.name}.
+                        All rights reserved.
                     </span>
                     <p className={s.attribution}>Website by JBM Web Co</p>
                 </div>

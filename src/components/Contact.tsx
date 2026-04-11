@@ -84,9 +84,7 @@ export default function Contact() {
                 <div className={s.grid}>
                     <div className={s.info}>
                         <div>
-                            <h3 className={s.infoTitle}>
-                                {businessData.name}
-                            </h3>
+                            <h3 className={s.infoTitle}>{businessData.name}</h3>
                             <p className={s.infoText}>
                                 {businessData.description}
                             </p>
@@ -121,9 +119,7 @@ export default function Contact() {
                                 <MapPin size={18} />
                             </div>
                             <div>
-                                <div className={s.itemLabel}>
-                                    Service Area
-                                </div>
+                                <div className={s.itemLabel}>Service Area</div>
                                 <div className={s.itemValue}>
                                     Contact us to discuss your area
                                 </div>
